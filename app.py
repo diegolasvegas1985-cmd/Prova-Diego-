@@ -46,7 +46,7 @@ async def get_manifest(config: str):
     return {
         "id": "community.browser.opener",
         "version": "1.0.4",
-        "name": "Guardaplay Browser Opener",
+        "name": "Diego🔥Browser",
         "resources": ["stream"],
         "types": ["movie", "series"],
         "idPrefixes": ["tt"]
@@ -65,7 +65,7 @@ async def get_stream(config: str, type: str, imdb_id: str):
     return {
         "streams": [
             {
-                "name": "Guardaplay Browser",
+                "name": "Guardaplay",
                 "title": "Avvia film nel browser",
                 "externalUrl": target_url,
                 "behaviorHints": {
@@ -79,3 +79,4 @@ async def get_stream(config: str, type: str, imdb_id: str):
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 10000))
     uvicorn.run("app:app", host="0.0.0.0", port=port)
+    
