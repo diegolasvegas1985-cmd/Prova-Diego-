@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Configura Browser Streamer</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; }
+        input { width: 100%; max-width: 400px; padding: 10px; margin: 10px 0; }
+        #result { margin-top: 20px; padding: 10px; background: #f0f0f0; border: 1px solid #ccc; word-break: break-all; }
+    </style>
+</head>
+<body>
+    <h1>Configuratore Addon</h1>
+    <p>Inserisci l'URL del sito (es: https://streaming-community.dog)</p>
+    <input type="text" id="url" placeholder="https://streaming-community.dog">
+    <br>
+    <button onclick="generate()">Genera Link Addon</button>
+
+    <div id="result" style="display:none;">
+        <p><strong>URL Addon (da copiare su Stremio):</strong></p>
+        <p id="addonLink"></p>
+    </div>
+
+    <script>
+        function generate() {
+            const url = document.getElementById('url').value;
+            const b64 = btoa(url);
+            const host = window.location.host;
+            const manifestLink = `https://${host}/${b64}/manifest.json`;
+            
+            document.getElementById('addonLink').innerText = manifestLink;
+            document.getElementById('result').style.display = 'block';
+        }
+    </script>
+</body>
+</html>

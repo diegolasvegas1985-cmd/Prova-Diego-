@@ -1,0 +1,7 @@
+{
+  "language": "it",
+  "resolution": "1080p",
+  "max_results": 10,
+  "exclude_cam": true,
+  "exclude_4k": true
+}
